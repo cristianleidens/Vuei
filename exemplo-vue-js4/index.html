@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Exemplo vue js</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Aluno: {{name}}</h1>
+      <h2 v-show="status">Status do aluno: Ativo</h2>
+      <h2 v-show="!status">Status do aluno: Inativo</h2>
+      <p v-if="status==true">Nota1: {{grade1}}
+      <br>Nota2: {{grade2}}
+      <br>Média: {{average}}</p>
+
+      <h3 v-if="status==true">Conceito</h3>
+      <p v-if="average >= 9 && status==true">A</p>
+      <p v-else-if="average >= 8 && status==true">B</p>
+      <p v-else-if="average >= 6 && status==true">C</p>
+      <p v-else-if="average > 0 && status==true">D</p>
+      <p v-else="status=true">Nao matriculado</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
